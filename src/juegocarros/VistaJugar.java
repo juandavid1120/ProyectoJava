@@ -4,8 +4,11 @@
  * and open the template in the editor.
  */
 package juegocarros;
-import javax.swing.ImageIcon;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -18,9 +21,12 @@ public class VistaJugar extends javax.swing.JFrame {
      */
     public VistaJugar() {
         initComponents();
+        this.setLocationRelativeTo(null);
         lblMostrarDado.setVisible(false);
     }
- 
+    Ingreso ObjIngreso1 = new Ingreso();
+    Juego ObjJuego = ObjIngreso1.objJuego;
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -115,31 +121,80 @@ public class VistaJugar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
- // Tirar dado
+    int sw=0;
+    int contadorJugador;
+    List<Jugador> ListaJugadores = ObjJuego.getLista();
+    int NroJugadores =ListaJugadores.size();
+    List Distancias = new LinkedList();
+      List<Jugador> ListaGanadores = new ArrayList<Jugador>();
+    double Meta = ObjJuego.getObjPista().getDistancia() * 1000;
+
+// Tirar dado
+
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         generarnumeros objDado = new generarnumeros();
-        int datos = objDado.calcularnumero();
-        imagenes objImag1 = new imagenes();
-        //lblMostrarDado.setIcon(objImag1.gifDado1(datos));
-          lblMostrarDado.setVisible(true);
-          
-        
+
+        lblMostrarDado.setVisible(true);
+
+
     }//GEN-LAST:event_jButton2ActionPerformed
     //Parar Dado
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        contadorJugador+=1;
         lblMostrarDado.setVisible(false);
         generarnumeros objDado = new generarnumeros();
-        ImagenesResul objImag1 = new ImagenesResul();
+
         int num1 = objDado.calcularnumero();
-        //ImageIcon a=objImag1.pngDadoR(num1);
-       // lblMostrarDado.setIcon(a);
-       txtResultado.setText(Float.toString(num1));
-       
+        txtResultado.setText(Float.toString(num1));       
+        
+        AsignarDistancia(sw, Calculardistancia(num1));
+
+
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void txtResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtResultadoActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_txtResultadoActionPerformed
+
+//    public void ComenzarJugar(Juego ObJuego, int NroDado) {
+//
+//    }
+
+    public double Calculardistancia(int nro) {
+        double Distancia = nro * 1000;
+        return Distancia;
+    }
+
+    public void AsignarDistancia(int sw,double valor) {
+        if(sw == 0) {
+            Distancias.add(valor);          
+
+        }else{
+            int aux=NroJugador();
+            double ProximaDistancia=(double)Distancias.get(aux)+valor;
+            if(ProximaDistancia==Meta){
+                ListaGanadores.add(ListaJugadores.get(aux));
+                BuscarGanadores();
+                
+            }else{
+                Distancias.add(aux, ProximaDistancia);
+            }
+            
+            
+        }
+    }
+     public int NroJugador() {
+        if(contadorJugador == NroJugadores) {
+           contadorJugador=0;
+           sw=1;//cambie el sw para saber que tengo empezar a prenguntar si ya gano alguien 
+
+        }
+        return contadorJugador;
+    }
+     
+     public void BuscarGanadores(){
+         
+     }
 
     /**
      * @param args the command line arguments

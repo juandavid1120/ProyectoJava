@@ -18,7 +18,7 @@ public class Ingreso extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
     }
-     Juego objJuego = new Juego();
+     public static Juego objJuego = new Juego();
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -129,7 +129,10 @@ public class Ingreso extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
-     VistaJugar ObjVistajugar =new VistaJugar(objJuego);
+     VistaJugar ObjVistajugar =new VistaJugar();
+     ObjVistajugar.setVisible(true);
+     this.setVisible(false);
+     
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
