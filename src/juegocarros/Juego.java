@@ -63,6 +63,7 @@ public class Juego {
         int Sw = (Codigo == 1) ? 0 : 1;
 
         Lista.add(new Jugador(nombre, Sw, ObjConductor));
+       //  Lista.add(new Jugador("JuanDa", Sw, ObjConductor));
 
     }
 
@@ -76,14 +77,15 @@ public class Juego {
     public void CrearCarro() {
         String Nombre, Marca, Color, Placa;
         JOptionPane.showMessageDialog(null, "Vamos a crear un carro");
-        Nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre carro");
-        Marca = JOptionPane.showInputDialog(null, "Ingrese la Marca ");
-        Color = JOptionPane.showInputDialog(null, "Ingrese el Color ");
-        Placa = JOptionPane.showInputDialog(null, "Ingrese la placa ");
+//        Nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre carro");
+//        Marca = JOptionPane.showInputDialog(null, "Ingrese la Marca ");
+//        Color = JOptionPane.showInputDialog(null, "Ingrese el Color ");
+//        Placa = JOptionPane.showInputDialog(null, "Ingrese la placa ");
 
         int Sw = (Codigo == 1) ? 0 : 1;
 
-        Carro ObjCarro = new Carro(Nombre, Marca, Color, Placa, Sw, objPista.crearCarril());
+      //  Carro ObjCarro = new Carro(Nombre, Marca, Color, Placa, Sw, objPista.crearCarril());
+        Carro ObjCarro = new Carro("ElRojo","Porche","NEGRO","YFA4F", Sw, objPista.crearCarril());
         this.objCarro = ObjCarro;
 
     }
@@ -92,10 +94,11 @@ public class Juego {
         String Nombre;
         double Distancia;
         JOptionPane.showMessageDialog(null, "Vamos a crear una pista");
-        Nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre de la pista");
+       // Nombre = JOptionPane.showInputDialog(null, "Ingrese el nombre de la pista");
         Distancia = Double.parseDouble(JOptionPane.showInputDialog(null, "Ingrese la distancia de la pista(en kilometros) "));
         int Sw = (Codigo == 1) ? 0 : 1;
-        Pista ObjPista1 = new Pista(Nombre, Distancia, Sw);
+        //Pista ObjPista1 = new Pista(Nombre, Distancia, Sw);
+          Pista ObjPista1 = new Pista("Estadio", Distancia, Sw);
         this.objPista = ObjPista1;
 
     }

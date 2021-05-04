@@ -124,6 +124,7 @@ public class Ingreso extends javax.swing.JFrame {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         
         objJuego.configurarJuego();
+        jButton1.setEnabled(false);
         
         
     }//GEN-LAST:event_jButton1ActionPerformed

@@ -3,17 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/ImagenesResul.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Pista.java</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/imagenes.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Ingreso.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Podio.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Carro.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Conductor.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/generarnumeros.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Juego.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/VistaJugar.java</file>
-            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Jugador.java</file>
             <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/JuegoCarros.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Juego.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Conductor.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/Ingreso.java</file>
+            <file>file:/C:/Users/Usuario/Documents/NetBeansProjects/JuegoCarros/src/juegocarros/VistaJugar.java</file>
         </group>
     </open-files>
 </project-private>

@@ -26,7 +26,7 @@ public class Jugador {
     public Jugador( String Nombre,int sw, Conductor ObjConductor) {
         
         if(sw==0){
-           this.Id = 1;
+           this.Id = 0;
        }else
        {
            this.Id=Id+1;

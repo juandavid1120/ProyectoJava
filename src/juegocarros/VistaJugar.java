@@ -9,6 +9,7 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -23,6 +24,7 @@ public class VistaJugar extends javax.swing.JFrame {
         initComponents();
         this.setLocationRelativeTo(null);
         lblMostrarDado.setVisible(false);
+
     }
     Ingreso ObjIngreso1 = new Ingreso();
     Juego ObjJuego = ObjIngreso1.objJuego;
@@ -42,6 +44,7 @@ public class VistaJugar extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         lblMostrarDado = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
+        LbInfoJugador = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -71,6 +74,9 @@ public class VistaJugar extends javax.swing.JFrame {
         lblMostrarDado.setIcon(new javax.swing.ImageIcon(getClass().getResource("/imagenes/NumerosDados.gif"))); // NOI18N
         lblMostrarDado.setText(".");
 
+        LbInfoJugador.setBackground(new java.awt.Color(51, 51, 255));
+        LbInfoJugador.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -78,39 +84,43 @@ public class VistaJugar extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(34, 34, 34)
                 .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 478, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 195, Short.MAX_VALUE)
                 .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 453, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(47, 47, 47))
             .addGroup(layout.createSequentialGroup()
-                .addGap(363, 363, 363)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
-                        .addComponent(jLabel2)
-                        .addGap(80, 80, 80)
-                        .addComponent(lblMostrarDado, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(139, 139, 139)))
-                .addContainerGap(475, Short.MAX_VALUE))
+                .addGap(430, 430, 430)
+                .addComponent(jLabel2)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel1)
-                .addGap(329, 329, 329))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(jLabel1)
+                        .addGap(374, 374, 374))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(lblMostrarDado, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(550, 550, 550))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 369, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(391, 391, 391))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                        .addComponent(LbInfoJugador, javax.swing.GroupLayout.PREFERRED_SIZE, 305, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(441, 441, 441))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addComponent(jLabel1))
-                    .addGroup(layout.createSequentialGroup()
-                        .addGap(299, 299, 299)
-                        .addComponent(jLabel2)))
-                .addGap(30, 30, 30)
+                .addContainerGap()
+                .addComponent(jLabel1)
+                .addGap(170, 170, 170)
+                .addComponent(LbInfoJugador)
+                .addGap(45, 45, 45)
+                .addComponent(jLabel2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 40, Short.MAX_VALUE)
                 .addComponent(lblMostrarDado, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtResultado, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(42, 42, 42)
+                .addGap(48, 48, 48)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
                     .addComponent(jButton1))
@@ -121,12 +131,15 @@ public class VistaJugar extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-    int sw=0;
-    int contadorJugador;
+    static int sw = 0;
+    static int sw2 = 0;
+    static int contadorJugador;
     List<Jugador> ListaJugadores = ObjJuego.getLista();
-    int NroJugadores =ListaJugadores.size();
+    int pos;
+
+    int NroJugadores = ListaJugadores.size();
     List Distancias = new LinkedList();
-      List<Jugador> ListaGanadores = new ArrayList<Jugador>();
+    List<Jugador> ListaGanadores = new ArrayList<Jugador>();
     double Meta = ObjJuego.getObjPista().getDistancia() * 1000;
 
 // Tirar dado
@@ -140,15 +153,62 @@ public class VistaJugar extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton2ActionPerformed
     //Parar Dado
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        contadorJugador+=1;
-        lblMostrarDado.setVisible(false);
-        generarnumeros objDado = new generarnumeros();
+        int num1;
+        if (sw2 == 0) {
+            contadorJugador = 0;
+            lblMostrarDado.setVisible(false);
+            generarnumeros objDado = new generarnumeros();
+            pos = contadorJugador;
+            num1 = objDado.calcularnumero();
+            txtResultado.setText(Float.toString(num1));
+            Distancias.add(Calculardistancia(num1));
+            
+            sw2 = 1;
+        } else if (sw2 == 1) {
+              if(pos==NroJugadores-1){
+                contadorJugador=0;                
+            }else{
+            contadorJugador = contadorJugador + 1;
+              }
+            lblMostrarDado.setVisible(false);
+            generarnumeros objDado = new generarnumeros();
+            pos = contadorJugador;
+            num1 = objDado.calcularnumero();
+            txtResultado.setText(Float.toString(num1));
+            Distancias.add(Calculardistancia(num1));
+             JOptionPane.showMessageDialog(null, "tengo" + Distancias.get(pos) + " nro jugado: " + pos);
+          
+            
 
-        int num1 = objDado.calcularnumero();
-        txtResultado.setText(Float.toString(num1));       
-        
-        AsignarDistancia(sw, Calculardistancia(num1));
+        }else
+        {
+            contadorJugador = contadorJugador + 1;
+            lblMostrarDado.setVisible(false);
+            generarnumeros objDado = new generarnumeros();
+            pos = contadorJugador;
+            num1 = objDado.calcularnumero();
+            txtResultado.setText(Float.toString(num1));
+           
+            if(pos==NroJugadores){
+                contadorJugador=0;                
+            }
+            
+            
+            double ProximaDistancia = (double) Distancias.get(pos) + num1;
+            JOptionPane.showMessageDialog(null, "tengo" + ProximaDistancia + " nro jugado: " + pos);
+            if (ProximaDistancia >= Meta) {
+                ListaGanadores.add(ListaJugadores.get(pos));
+                 JOptionPane.showMessageDialog(null, "Gane" + ListaGanadores.get(pos) + " nro jugado: " + pos);
+                BuscarGanadores();
 
+            } else {
+                Distancias.add(pos, ProximaDistancia);
+            }
+
+       
+        }
+
+//        AsignarDistancia(sw, Calculardistancia(num1),pos);
 
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -159,42 +219,40 @@ public class VistaJugar extends javax.swing.JFrame {
 //    public void ComenzarJugar(Juego ObJuego, int NroDado) {
 //
 //    }
-
     public double Calculardistancia(int nro) {
         double Distancia = nro * 1000;
         return Distancia;
     }
+//    public void AsignarDistancia(int sw, double valor,int pos) {
+//        if (sw == 0) {
+//              
+//            Distancias.add(pos , valor);
+//            JOptionPane.showMessageDialog(null, "tengo");
+//        } else {
+//            //int aux = NroJugador()-1;
+//            double ProximaDistancia = (double) Distancias.get(pos) + valor;
+//            JOptionPane.showMessageDialog(null, "tengo" + ProximaDistancia + " nro jugado: " + pos);
+//            if (ProximaDistancia >= Meta) {
+//                ListaGanadores.add(ListaJugadores.get(pos));
+//                BuscarGanadores();
+//
+//            } else {
+//                Distancias.add(pos, ProximaDistancia);
+//            }
+//
+//        }
+//    }
+//    public void NroJugador() {
+//        if (contadorJugador == NroJugadores) {
+//            contadorJugador = 1;
+//            sw = 1;//cambie el sw para saber que tengo empezar a prenguntar si ya gano alguien 
+//
+//        }
+//        return contadorJugador;
+//    }
+    public void BuscarGanadores() {
 
-    public void AsignarDistancia(int sw,double valor) {
-        if(sw == 0) {
-            Distancias.add(valor);          
-
-        }else{
-            int aux=NroJugador();
-            double ProximaDistancia=(double)Distancias.get(aux)+valor;
-            if(ProximaDistancia==Meta){
-                ListaGanadores.add(ListaJugadores.get(aux));
-                BuscarGanadores();
-                
-            }else{
-                Distancias.add(aux, ProximaDistancia);
-            }
-            
-            
-        }
     }
-     public int NroJugador() {
-        if(contadorJugador == NroJugadores) {
-           contadorJugador=0;
-           sw=1;//cambie el sw para saber que tengo empezar a prenguntar si ya gano alguien 
-
-        }
-        return contadorJugador;
-    }
-     
-     public void BuscarGanadores(){
-         
-     }
 
     /**
      * @param args the command line arguments
@@ -232,6 +290,7 @@ public class VistaJugar extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel LbInfoJugador;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JLabel jLabel1;
