@@ -10,7 +10,8 @@ package juegocarros;
  * @author Usuario
  */
 public class Podio {
-
+    
+    private String Id;
     private String Nombre;
     private String Puesto;
 
@@ -43,6 +44,6 @@ public class Podio {
     public void setId(String Id) {
         this.Id = Id;
     }
-    private String Id;
+    
    
 }

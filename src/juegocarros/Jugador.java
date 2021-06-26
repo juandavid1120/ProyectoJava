@@ -13,7 +13,19 @@ public class Jugador {
     
      private static int Id;
      private String Nombre;
-    private Conductor ObjConductor;
+     private Conductor ObjConductor;
+     private int DistaciaRecorida;    
+
+    public int getDistaciaRecorida() {
+        return DistaciaRecorida;
+    }
+
+    public void setDistaciaRecorida(int DistaciaRecorida) {
+        this.DistaciaRecorida = DistaciaRecorida;
+    }
+
+    public Jugador() {
+    }
 
     public Conductor getObjConductor() {
         return ObjConductor;

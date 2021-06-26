@@ -156,11 +156,11 @@ public class VistaJugar extends javax.swing.JFrame {
         int num1;
         if (sw2 == 0) {
             contadorJugador = 0;
-            lblMostrarDado.setVisible(false);
+           
             generarnumeros objDado = new generarnumeros();
             pos = contadorJugador;
             num1 = objDado.calcularnumero();
-            txtResultado.setText(Float.toString(num1));
+            
             Distancias.add(Calculardistancia(num1));
             
             sw2 = 1;
